@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Ajout SEO - méta-description et mots-clés -->
+<meta name="description" content="Portfolio de Njomani Fred, étudiant en statistique passionné par la data science">
+<meta name="keywords" content="statistique, data science, portfolio">
+<title>Portfolio - Étudiant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#2563EB',
+secondary: '#64748B'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+html { scroll-behavior: smooth; }
+.skill-bar { transition: width 1s ease-in-out; }
+.nav-link.active { color: #2563EB; }
+.project-card { transition: transform 0.3s ease; }
+.project-card:hover { transform: translateY(-5px); }
+/* Animation pour la modale d'article */
+#articleModal {
+  transition: opacity 0.3s ease;
+}
+#articleModal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+#articleModal:not(.hidden) {
+  opacity: 1;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<nav class="fixed top-0 w-full bg-white shadow-sm z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-16">
+<div class="flex items-center">
+<a href="#" class="text-2xl font-bold text-primary">Portfolio</a>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a href="#accueil" class="nav-link text-gray-700 hover:text-primary">Accueil</a>
+<a href="#about" class="nav-link text-gray-700 hover:text-primary">À propos</a>
+<a href="#langues" class="nav-link text-gray-700 hover:text-primary">Langues & Certifications</a>
+<a href="#competences" class="nav-link text-gray-700 hover:text-primary">Compétences</a>
+<a href="#projets" class="nav-link text-gray-700 hover:text-primary">Projets</a>
+<a href="#blog" class="nav-link text-gray-700 hover:text-primary">Blog</a>
+<a href="#experiences" class="nav-link text-gray-700 hover:text-primary">Expériences</a>
+<a href="#contact" class="nav-link text-gray-700 hover:text-primary">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+<section id="accueil" class="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row items-center justify-between">
+<div class="md:w-1/2 mb-10 md:mb-0">
+<img src="https://static.readdy.ai/image/7be2288b0151baaf9d25dc0abd6bd630/026f0a010e1aba9b90774b80ef369285.jpeg"
+alt="Portrait"
+class="rounded-full w-64 h-64 object-cover mx-auto shadow-lg">
+</div>
+<div class="md:w-1/2 text-center md:text-left">
+<h1 class="text-4xl font-bold mb-4">Bonjour, je suis Njomani Fred</h1>
+<p class="text-xl text-gray-600 mb-8">Étudiant en deuxième année de statistique</p>
+<a href="#about" class="inline-block bg-primary text-white px-8 py-3 rounded-button hover:bg-blue-600 transition-colors cursor-pointer">
+Découvrir mon profil
+</a>
+<div class="flex justify-center md:justify-start space-x-6 mt-8">
+<!-- Ajout d'aria-label pour l'accessibilité -->
+<a href="https://www.linkedin.com/in/fred-njomani-a5258329a" target="_blank" class="text-gray-600 hover:text-primary" aria-label="LinkedIn">
+<i class="ri-linkedin-fill ri-2x"></i>
+</a>
+<a href="https://github.com/Fred-lannister" target="_blank" class="text-gray-600 hover:text-primary" aria-label="GitHub">
+<i class="ri-github-fill ri-2x"></i>
+</a>
+<a href="https://x.com/FNjomani22633" target="_blank" class="text-gray-600 hover:text-primary" aria-label="Twitter/X">
+<i class="ri-twitter-fill ri-2x"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="about" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl font-bold text-center mb-16">À Propos de Moi</h2>
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2">
+<img src="https://public.readdy.ai/ai/img_res/aefe5f8444498d873848b23fddaeb6c9.jpg"
+alt="Photo professionnelle"
+class="rounded-lg shadow-lg w-full">
+</div>
+<div class="md:w-1/2">
+<p class="text-gray-600 mb-6">
+En tant que futur analyste statisticien, je suis passionné par la Data Science et l'économie. Mon parcours en statistique m'a permis de développer une solide compréhension des méthodes d'analyse de données et des outils statistiques, tout en nourrissant ma curiosité pour les tendances économiques et leur impact sur notre société.
+</p>
+<p class="text-gray-600 mb-8">
+J'aime particulièrement apprendre et voyager, car cela me permet d'élargir mes horizons et de découvrir de nouvelles perspectives. Ma plus grande satisfaction vient du partage de connaissances avec les autres, car je crois fermement que le savoir prend toute sa valeur lorsqu'il est partagé.
+</p>
+<button class="flex items-center bg-primary text-white px-6 py-3 rounded-button hover:bg-blue-600 transition-colors cursor-pointer">
+<i class="ri-download-line mr-2"></i>
+Télécharger mon CV
+</button>
+</div>
+</div>
+</div>
+</section>
+<section id="langues" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl font-bold text-center mb-16">Langues & Certifications</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<h3 class="text-xl font-semibold mb-6 flex items-center">
+<i class="ri-translate-2-line ri-lg mr-2 text-primary"></i>
+Langues
+</h3>
+<div class="space-y-4">
+<!-- Correction des icônes de langues inexistantes -->
+<div class="flex items-center space-x-4">
+<i class="ri-global-line ri-lg text-primary"></i>
+<div>
+<p class="font-medium">Français</p>
+<p class="text-gray-600">Natif</p>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<i class="ri-global-line ri-lg text-primary"></i>
+<div>
+<p class="font-medium">Anglais</p>
+<p class="text-gray-600">Niveau C1</p>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<i class="ri-global-line ri-lg text-primary"></i>
+<div>
+<p class="font-medium">Espagnol</p>
+<p class="text-gray-600">Niveau B2</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-6 flex items-center">
+<i class="ri-medal-line ri-lg mr-2 text-primary"></i>
+Certifications
+</h3>
+<div class="space-y-4">
+<div class="flex items-center space-x-4">
+<i class="ri-file-chart-line ri-lg text-primary"></i>
+<div>
+<p class="font-medium">Suivi et Evaluation d'un projet de developpement</p>
+<p class="text-gray-600">AFD - Mars 2024</p>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<i class="ri-microsoft-line ri-lg text-primary"></i>
+<div>
+<p class="font-medium">Microsoft Power Platform</p>
+<p class="text-gray-600">Microsoft Learn - Février 2024</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="competences" class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl font-bold text-center mb-16">Mes Compétences</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<h3 class="text-xl font-semibold mb-6">Compétences Techniques</h3>
+<div class="space-y-6">
+<div class="skill-item">
+<div class="flex justify-between mb-2">
+<span class="text-gray-700">Python</span>
+<span class="text-primary">90%</span>
+</div>
+<div class="h-2 bg-gray-200 rounded-full">
+<div class="h-2 bg-primary rounded-full skill-bar" style="width: 90%"></div>
+</div>
+</div>
+<div class="skill-item">
+<div class="flex justify-between mb-2">
+<span class="text-gray-700">Graphic Design</span>
+<span class="text-primary">85%</span>
+</div>
+<div class="h-2 bg-gray-200 rounded-full">
+<div class="h-2 bg-primary rounded-full skill-bar" style="width: 85%"></div>
+</div>
+</div>
+<div class="skill-item">
+<div class="flex justify-between mb-2">
+<span class="text-gray-700">Data Analytics</span>
+<span class="text-primary">80%</span>
+</div>
+<div class="h-2 bg-gray-200 rounded-full">
+<div class="h-2 bg-primary rounded-full skill-bar" style="width: 80%"></div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-6">Soft Skills</h3>
+<div class="space-y-6">
+<div class="skill-item">
+<div class="flex justify-between mb-2">
+<span class="text-gray-700">Travail d'équipe</span>
+<span class="text-primary">95%</span>
+</div>
+<div class="h-2 bg-gray-200 rounded-full">
+<div class="h-2 bg-primary rounded-full skill-bar" style="width: 95%"></div>
+</div>
+</div>
+<div class="skill-item">
+<div class="flex justify-between mb-2">
+<span class="text-gray-700">Communication</span>
+<span class="text-primary">90%</span>
+</div>
+<div class="h-2 bg-gray-200 rounded-full">
+<div class="h-2 bg-primary rounded-full skill-bar" style="width: 90%"></div>
+</div>
+</div>
+<div class="skill-item">
+<div class="flex justify-between mb-2">
+<span class="text-gray-700">Gestion de projet</span>
+<span class="text-primary">85%</span>
+</div>
+<div class="h-2 bg-gray-200 rounded-full">
+<div class="h-2 bg-primary rounded-full skill-bar" style="width: 85%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="projets" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl font-bold text-center mb-16">Mes Projets</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/c2b1ca23666f72c5247855905dd9f479.jpg"
+alt="Projet 1"
+class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Application Web IA</h3>
+<p class="text-gray-600 mb-4">Développement d'une application web utilisant l'intelligence artificielle pour l'analyse de données en temps réel.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-primary hover:text-blue-600" aria-label="GitHub">
+<i class="ri-github-fill ri-lg"></i>
+</a>
+<a href="#" class="text-primary hover:text-blue-600" aria-label="Lien externe">
+<i class="ri-external-link-line ri-lg"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/5ff2afd94f0410c881ef136269b6b301.jpg"
+alt="Projet 2"
+class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Application Mobile</h3>
+<p class="text-gray-600 mb-4">Création d'une application mobile de gestion de tâches avec synchronisation cloud et notifications en temps réel.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-primary hover:text-blue-600" aria-label="GitHub">
+<i class="ri-github-fill ri-lg"></i>
+</a>
+<a href="#" class="text-primary hover:text-blue-600" aria-label="Lien externe">
+<i class="ri-external-link-line ri-lg"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/10b60df063fd4c3baf94acdf74b761e6.jpg"
+alt="Projet 3"
+class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Dashboard Analytics</h3>
+<p class="text-gray-600 mb-4">Conception d'un tableau de bord analytique pour la visualisation de données commerciales en temps réel.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-primary hover:text-blue-600" aria-label="GitHub">
+<i class="ri-github-fill ri-lg"></i>
+</a>
+<a href="#" class="text-primary hover:text-blue-600" aria-label="Lien externe">
+<i class="ri-external-link-line ri-lg"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="blog" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl font-bold text-center mb-16">Mon Blog</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/f261c8ce3f25ebcf7faacd0194fbb315.jpg"
+alt="Article 1"
+class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">L'Impact de l'IA sur l'Analyse Statistique</h3>
+<p class="text-gray-600 mb-4">L'intelligence artificielle révolutionne notre approche de l'analyse statistique. Découvrez comment les algorithmes modernes transforment le traitement des données...</p>
+<!-- Uniformisation des boutons "Lire plus" -->
+<button onclick="showArticle('ia')" class="text-primary hover:text-blue-600 flex items-center">
+Lire plus
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+</div>
+<div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/5e8f4caef0462c4ed4616d7f3ac7f0e4.jpg"
+alt="Article 2"
+class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">NASDAQ et S&P 500 : au coeur du marché boursier américain</h3>
+<p class="text-gray-600 mb-4">Une analyse approfondie des deux plus grands indices boursiers américains et leur influence sur l'économie mondiale...</p>
+<button onclick="showArticle('nasdaq')" class="text-primary hover:text-blue-600 flex items-center">
+Lire plus
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+</div>
+<div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/bd30ee52074a9e2086ffc920001c5947.jpg"
+alt="Article 3"
+class="w-full h-48 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">The Line (Arabie Saoudite) : ambition ou utopie ?</h3>
+<p class="text-gray-600 mb-4">Analyse détaillée du projet futuriste The Line et son impact potentiel sur l'urbanisme moderne...</p>
+<button onclick="showArticle('theLine')" class="text-primary hover:text-blue-600 flex items-center">
+Lire plus
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+</div>
+<div id="articleModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+<div class="bg-white p-8 rounded-lg max-w-2xl max-h-[80vh] overflow-y-auto relative">
+<button onclick="closeArticle()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+<i class="ri-close-line ri-2x"></i>
+</button>
+<div id="articleContent"></div>
+</div>
+</div>
+<script>
+function showArticle(type) {
+const modal = document.getElementById('articleModal');
+const content = document.getElementById('articleContent');
+const articles = {
+ia: {
+title: "L'Impact de l'IA sur l'Analyse Statistique",
+content: `
+<h2 class="text-2xl font-bold mb-4">L'Impact de l'IA sur l'Analyse Statistique</h2>
+<p class="mb-4">L'intelligence artificielle transforme radicalement le domaine de l'analyse statistique, offrant de nouvelles perspectives et méthodologies pour traiter les données complexes. Les algorithmes d'apprentissage automatique permettent aujourd'hui d'analyser des volumes de données sans précédent.</p>
+<h3 class="text-xl font-bold mb-2">Évolution de l'analyse statistique</h3>
+<p class="mb-4">Traditionnellement, l'analyse statistique reposait sur des modèles paramétriques et des hypothèses strictes. L'IA permet désormais d'adopter des approches plus flexibles, capables de découvrir des modèles complexes sans hypothèses préalables sur la distribution des données.</p>
+<h3 class="text-xl font-bold mb-2">Applications pratiques</h3>
+<p class="mb-4">Dans des domaines comme la finance, la santé ou le marketing, l'IA enrichit l'analyse statistique par sa capacité à traiter simultanément des variables nombreuses et à identifier des corrélations subtiles qui échapperaient aux méthodes traditionnelles.</p>
+<h3 class="text-xl font-bold mb-2">Défis et perspectives</h3>
+<p class="mb-4">L'intégration de l'IA dans l'analyse statistique soulève des questions d'interprétabilité et de transparence. Le défi actuel consiste à développer des modèles puissants mais explicables, permettant aux statisticiens de comprendre les fondements des prédictions générées par ces systèmes.</p>
+`
+},
+nasdaq: {
+title: "NASDAQ et S&P 500 : au coeur du marché boursier américain",
+content: `
+<h2 class="text-2xl font-bold mb-4">NASDAQ et S&P 500 : au coeur du marché boursier américain</h2>
+<p class="mb-4">Le NASDAQ et le S&P 500 sont deux des indices boursiers les plus suivis au monde. Ils représentent non seulement la santé économique des États-Unis, mais influencent également les marchés financiers mondiaux.</p>
+<h3 class="text-xl font-bold mb-2">Le NASDAQ</h3>
+<p class="mb-4">Créé en 1971, le NASDAQ (National Association of Securities Dealers Automated Quotations) est devenu le symbole de l'innovation technologique. Il regroupe principalement des entreprises du secteur technologique comme Apple, Microsoft, Amazon, et Meta.</p>
+<h3 class="text-xl font-bold mb-2">Le S&P 500</h3>
+<p class="mb-4">Le Standard & Poor's 500, créé en 1957, est considéré comme le meilleur indicateur de la performance des grandes entreprises américaines. Il regroupe les 500 plus grandes entreprises cotées aux États-Unis.</p>
+<h3 class="text-xl font-bold mb-2">Impact sur l'économie mondiale</h3>
+<p class="mb-4">Ces deux indices servent de baromètres pour l'économie mondiale. Leurs fluctuations influencent les décisions d'investissement à l'échelle planétaire et peuvent avoir des répercussions sur les politiques monétaires des banques centrales.</p>
+`
+},
+theLine: {
+title: "The Line (Arabie Saoudite) : ambition ou utopie ?",
+content: `
+<h2 class="text-2xl font-bold mb-4">The Line (Arabie Saoudite) : ambition ou utopie ?</h2>
+<p class="mb-4">The Line est un projet futuriste ambitieux qui s'inscrit dans le cadre de NEOM, la méga-cité saoudienne estimée à 500 milliards de dollars. Cette ville linéaire de 170 km de long représente une vision révolutionnaire de l'urbanisme moderne.</p>
+<h3 class="text-xl font-bold mb-2">Caractéristiques principales</h3>
+<p class="mb-4">- Une ville sans voitures, sans routes et sans émissions de carbone<br>- Un système de transport ultra-rapide<br>- Une architecture verticale sur 500 mètres de hauteur<br>- Une capacité d'accueil de 9 millions d'habitants</p>
+<h3 class="text-xl font-bold mb-2">Défis et controverses</h3>
+<p class="mb-4">Le projet fait face à de nombreux défis techniques, environnementaux et sociaux. Les critiques soulignent les questions de faisabilité, l'impact écologique et le coût astronomique du projet.</p>
+<h3 class="text-xl font-bold mb-2">Perspective d'avenir</h3>
+<p class="mb-4">The Line pourrait redéfinir notre conception de l'urbanisme et ouvrir la voie à de nouvelles solutions pour les défis urbains du 21e siècle. Cependant, sa réalisation effective reste un défi majeur.</p>
+`
+}
+};
+content.innerHTML = articles[type].content;
+modal.classList.remove('hidden');
+}
+function closeArticle() {
+document.getElementById('articleModal').classList.add('hidden');
+}
+</script>
+</div>
+</div>
+</section>
+<section id="experiences" class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl font-bold text-center mb-16">Expériences</h2>
+<div class="relative">
+<div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200"></div>
+<div class="space-y-12">
+<div class="relative">
+<div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-4 w-4 h-4 bg-primary rounded-full"></div>
+<div class="ml-auto md:w-1/2 md:pr-8 pb-8">
+<div class="bg-white p-6 rounded-lg shadow-lg">
+<span class="text-primary font-semibold">Juillet 2024</span>
+<h3 class="text-xl font-bold mt-2">Projet Statistique</h3>
+<p class="text-gray-600 mt-4">
+Analyse des échanges commerciaux entre l'Afrique subsaharienne et le reste du monde. Étude approfondie des tendances commerciales et des impacts économiques.
+</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-4 w-4 h-4 bg-primary rounded-full"></div>
+<div class="mr-auto md:w-1/2 md:pl-8 pb-8">
+<div class="bg-white p-6 rounded-lg shadow-lg">
+<span class="text-primary font-semibold">Décembre 2024 - Janvier 2025</span>
+<h3 class="text-xl font-bold mt-2">Projet d'Enquête</h3>
+<p class="text-gray-600 mt-2">Campus Universitaire</p>
+<p class="text-gray-600 mt-4">
+Étude sur l'impact de la vie associative sur les étudiants. Analyse des données collectées et présentation des résultats sur l'engagement étudiant.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="py-20 bg-white">
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl font-bold text-center mb-16">Contact</h2>
+<form id="contact-form" class="space-y-6">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nom</label>
+<input type="text" id="name" name="name" required
+class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+<input type="email" id="email" name="email" required
+class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+<textarea id="message" name="message" rows="4" required
+class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+</div>
+<div class="text-center">
+<button type="submit" class="bg-primary text-white
+px-8 py-3 rounded-button hover:bg-blue-600 transition-colors cursor-pointer">
+  Envoyer
+</button>
+</div>
+</form>
+<div class="mt-12 text-center">
+  <div class="flex justify-center space-x-6">
+    <a href="https://www.linkedin.com/in/fred-njomani-a5258329a" target="_blank" class="text-gray-600 hover:text-primary" aria-label="LinkedIn">
+      <i class="ri-linkedin-fill ri-2x"></i>
+    </a>
+    <a href="https://github.com/Fred-lannister" target="_blank" class="text-gray-600 hover:text-primary" aria-label="GitHub">
+      <i class="ri-github-fill ri-2x"></i>
+    </a>
+    <a href="https://x.com/FNjomani22633" target="_blank" class="text-gray-600 hover:text-primary" aria-label="Twitter/X">
+      <i class="ri-twitter-fill ri-2x"></i>
+    </a>
+  </div>
+</div>
+</div>
+</section>
+<button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 cursor-pointer">
+  <i class="ri-arrow-up-line ri-lg"></i>
+</button>
+<script>
+// [Votre script JS pour scroll, formulaire, IntersectionObserver]
+</script>
+<script>(function(){/* Script Cloudflare */})();</script>
+</body>
+</html>
